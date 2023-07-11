@@ -39,9 +39,6 @@ export const Button = ({
   types,
   ...props
 }: ButtonProps) => {
-  const mode = primary
-    ? "storybook-button--primary"
-    : "storybook-button--secondary";
   return (
     <ButtonComponent
       type="button"

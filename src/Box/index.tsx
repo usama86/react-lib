@@ -1,12 +1,8 @@
 import React, { ReactNode } from "react";
 import Box from "@mui/material/Box";
+import { BoxComponentProps } from "../../stories/Box/Box";
 
-type IProps = {
-  children: ReactNode;
-  [key: string]: any; // Allow any other additional props
-};
-
-export default function BoxComponent({ children, ...otherProps }: IProps) {
+export function BoxComponent({ children, ...otherProps }: BoxComponentProps) {
   return <Box {...otherProps}>{children}</Box>;
 }
 
