@@ -1,5 +1,5 @@
 import React, { ReactNode } from "react";
-import { ButtonComponent } from "../../src/Button";
+import { SelectComponent } from "../../src/Select";
 
 export interface ButtonProps {
   /**
@@ -31,7 +31,7 @@ export interface ButtonProps {
 /**
  * Primary UI component for user interaction
  */
-export const Button = ({
+export const Select = ({
   primary = false,
   size = "medium",
   backgroundColor,
@@ -40,16 +40,18 @@ export const Button = ({
   ...props
 }: ButtonProps) => {
   return (
-    <ButtonComponent
-      type="button"
-      types={types}
-      // className={['storybook-button', `storybook-button--${size}`, mode].join(' ')}
-      backgroundColor={backgroundColor}
-      size={size}
+    <SelectComponent
+      label="Select"
+      handleValueChange={(e) => {
+        console.log(e);
+      }}
+      options={[
+        { label: "hi", val: "hi" },
+        { label: "hi", val: "hi" },
+      ]}
+      value="hi"
       {...props}
-    >
-      {label}
-    </ButtonComponent>
+    />
   );
 };
 

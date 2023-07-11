@@ -9,7 +9,7 @@ type IProps = {
   [key: string]: any; // Allow any other additional props
 };
 
-export default function TextFieldComponent({
+export function TextFieldComponent({
   Label,
   variant,
   value,

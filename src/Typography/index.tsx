@@ -1,5 +1,7 @@
 import React, { ReactNode } from "react";
 import Typography from "@mui/material/Typography";
+import { ThemeProvider } from "@mui/material/styles";
+import theme from "./mui.theme";
 
 type IProps = {
   children: ReactNode;
@@ -7,15 +9,17 @@ type IProps = {
   [key: string]: any; // Allow any other additional props
 };
 
-export default function TypographyComponent({
+export function TypographyComponent({
   children,
   variant,
   ...otherProps
 }: IProps) {
   return (
-    <Typography variant={variant} {...otherProps}>
-      {children}
-    </Typography>
+    <ThemeProvider theme={theme}>
+      <Typography variant={variant} {...otherProps}>
+        {children}
+      </Typography>
+    </ThemeProvider>
   );
 }
 

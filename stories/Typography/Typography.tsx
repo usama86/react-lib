@@ -1,5 +1,5 @@
 import React, { ReactNode } from "react";
-import { ButtonComponent } from "../../src/Button";
+import { TypographyComponent } from "../../src/Typography";
 
 export interface ButtonProps {
   /**
@@ -31,7 +31,7 @@ export interface ButtonProps {
 /**
  * Primary UI component for user interaction
  */
-export const Button = ({
+export const Typograhys = ({
   primary = false,
   size = "medium",
   backgroundColor,
@@ -40,7 +40,7 @@ export const Button = ({
   ...props
 }: ButtonProps) => {
   return (
-    <ButtonComponent
+    <TypographyComponent
       type="button"
       types={types}
       // className={['storybook-button', `storybook-button--${size}`, mode].join(' ')}
@@ -49,7 +49,7 @@ export const Button = ({
       {...props}
     >
       {label}
-    </ButtonComponent>
+    </TypographyComponent>
   );
 };
 
