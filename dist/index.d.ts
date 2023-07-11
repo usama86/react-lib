@@ -1,9 +1,17 @@
-import React from 'react';
+import * as react_jsx_runtime from 'react/jsx-runtime';
+import React, { ReactNode } from 'react';
 
 interface ButtonProps {
-    children: React.ReactNode;
-    onClick: () => void;
+    children: ReactNode;
+    onClick?: (event: React.MouseEvent<HTMLElement, MouseEvent>) => void;
+    [key: string]: any;
+    variant?: any;
 }
-declare const Button: ({ children, onClick }: ButtonProps) => React.JSX.Element;
+declare const ButtonComponent: {
+    ({ children, onClick, variant, ...otherProps }: ButtonProps): react_jsx_runtime.JSX.Element;
+    defaultProps: {
+        children: react_jsx_runtime.JSX.Element;
+    };
+};
 
-export { Button, ButtonProps };
+export { ButtonComponent, ButtonProps };

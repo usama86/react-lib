@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { storiesOf } from "@storybook/react";
-import { Button } from "./Button";
+import { ButtonComponent } from "./index";
 
 const stories = storiesOf("Button", module);
 stories.add("Button", () => {
@@ -8,5 +8,5 @@ stories.add("Button", () => {
   const setChange = () => {
     setValue(value === "Hello" ? "Bye" : "Hello");
   };
-  return <Button onClick={setChange}>{value}</Button>;
+  return <ButtonComponent onClick={setChange}>{value}</ButtonComponent>;
 });
