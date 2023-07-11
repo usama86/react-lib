@@ -1,5 +1,5 @@
 import React, { ReactNode } from "react";
-import { ButtonComponent } from "../src";
+import { ButtonComponent } from "../../src";
 
 export interface ButtonProps {
   /**
