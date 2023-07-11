@@ -1,8 +1,7 @@
-import React from "react";
-import "./button.css";
+import React, { ReactNode } from "react";
 import { ButtonComponent } from "../src";
 
-interface ButtonProps {
+export interface ButtonProps {
   /**
    * Is this the principal call to action on the page?
    */
@@ -18,11 +17,15 @@ interface ButtonProps {
   /**
    * Button contents
    */
-  label: string;
+  label?: string;
   /**
    * Optional click handler
    */
-  onClick?: () => void;
+  onClick?: (event: React.MouseEvent<HTMLElement, MouseEvent>) => void;
+  children: ReactNode;
+  variant?: any;
+  types?: "save" | "cancel" | undefined;
+  [key: string]: any; // Allow any other additional props
 }
 
 /**
@@ -33,6 +36,7 @@ export const Button = ({
   size = "medium",
   backgroundColor,
   label,
+  types,
   ...props
 }: ButtonProps) => {
   const mode = primary
@@ -41,11 +45,17 @@ export const Button = ({
   return (
     <ButtonComponent
       type="button"
+      types={types}
       // className={['storybook-button', `storybook-button--${size}`, mode].join(' ')}
-      // style={{ backgroundColor }}
+      backgroundColor={backgroundColor}
+      size={size}
       {...props}
     >
       {label}
     </ButtonComponent>
   );
 };
+
+// Button.defaultProps = {
+//   types: "save",
+// };
