@@ -1,7 +1,7 @@
 {
-  "name": "zdp-my-react-lib",
+  "name": "zdp-ui-kit",
   "version": "1.0.0",
-  "description": "zdp custom library",
+  "description": "ZDP UI kit based on MUI components, created as of the ZDP theme.",
   "main": "dist/index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
@@ -10,9 +10,13 @@
     "build": "tsup src/index.ts --dts",
     "start": "react-scripts start"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
+  "keywords": [
+    "Zones",
+    "UI-Kit"
+],
+  
+  "author": "Zones IT",
+  "license": "1.0.0",
   "dependencies": {
     "@emotion/react": "^11.11.1",
     "@emotion/styled": "^11.11.0",
