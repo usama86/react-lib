@@ -22,8 +22,3 @@ export function TypographyComponent({
     </ThemeProvider>
   );
 }
-
-TypographyComponent.defaultProps = {
-  children: <></>,
-  variant: "h4",
-};

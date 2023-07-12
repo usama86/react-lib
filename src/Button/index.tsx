@@ -1,6 +1,6 @@
 import React, { ReactNode } from "react";
 import Button from "@mui/material/Button";
-import TypographyComponent from "../Typography";
+import { TypographyComponent } from "../Typography";
 import { btnStyles } from "./style";
 import { ButtonProps } from "../../stories/Button/Button";
 
