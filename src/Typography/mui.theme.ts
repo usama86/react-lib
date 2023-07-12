@@ -1,8 +1,8 @@
-import { createTheme, responsiveFontSizes } from '@mui/material/styles';
-import { TypographyOptions } from '@mui/material/styles/createTypography';
-import React from 'react';
+import { createTheme, responsiveFontSizes } from "@mui/material/styles";
+import { TypographyOptions } from "@mui/material/styles/createTypography";
+import React from "react";
 
-declare module '@mui/material/Typography' {
+declare module "@mui/material/Typography" {
   interface TypographyPropsVariantOverrides {
     HomeBold: true;
     SubTitle: true;
@@ -44,176 +44,181 @@ interface ExtendedTypographyOptions extends TypographyOptions {
   LabelOSI: React.CSSProperties;
 }
 
+// variant = 'HomeBold' || 'XSmallHeading' || 'SmallHeading' || 'CTA_Button_L' || 'CTA_Button_M'
+// || 'CTA_Button_S' ||  'SubTitle' || 'Body_Content_S' || 'Body_Content_M' || 'Body_Content_BM'
+// || 'Body_Labels_M' || 'Body_Labels_M1' || 'SubHeading' || 'SubHeadingText' || 'DialogText'
+// || 'DialogSubTitle' || 'RadioText' || 'HelperText' || 'LabelOSI'
+
 const typographyOptions: ExtendedTypographyOptions = {
   fontSize: 13,
   fontFamily: '"Montserrat", sans-serif;',
   HomeBold: {
     //styleName: Heading/Heading - l;
-    fontSize: '32px',
-    fontWeight: '500',
+    fontSize: "32px",
+    fontWeight: "500",
     lineHeight: 1.25,
-    letterSpacing: '0em',
-    textAlign: 'left',
+    letterSpacing: "0em",
+    textAlign: "left",
   },
   XSmallHeading: {
     //styleName: Heading/Heading - xs;
-    fontSize: '16px',
+    fontSize: "16px",
     fontWeight: 600,
     lineHeight: 1.5,
-    letterSpacing: '0em',
-    textAlign: 'left',
+    letterSpacing: "0em",
+    textAlign: "left",
   },
   SmallHeading: {
     //styleName: Heading/Heading - s;
-    fontSize: '20px',
+    fontSize: "20px",
     fontWeight: 500,
     lineHeight: 1.4,
-    letterSpacing: '0em',
-    textAlign: 'left',
+    letterSpacing: "0em",
+    textAlign: "left",
   },
   CTA_Button_L: {
     //styleName: Buttons/CTA_Button - l;
-    fontSize: '16px',
+    fontSize: "16px",
     fontWeight: 600,
     lineHeight: 1.5,
-    letterSpacing: '0em',
-    textAlign: 'left',
+    letterSpacing: "0em",
+    textAlign: "left",
   },
   CTA_Button_M: {
     //styleName: Buttons/CTA_Button - m;
-    fontSize: '14px',
+    fontSize: "14px",
     fontWeight: 500,
     lineHeight: 1.57,
-    letterSpacing: '0em',
-    textAlign: 'left',
+    letterSpacing: "0em",
+    textAlign: "left",
   },
   CTA_Button_S: {
     //styleName: Buttons/CTA_Button - s;
-    fontSize: '12px',
+    fontSize: "12px",
     fontWeight: 600,
     lineHeight: 1.5,
-    letterSpacing: '0em',
-    textAlign: 'left',
+    letterSpacing: "0em",
+    textAlign: "left",
   },
   SubTitle: {
     //styleName: Sub Titles/Subtitle - s;
-    fontFamily: 'Open Sans',
-    fontSize: '16px',
-    fontWeight: '600',
+    fontFamily: "Open Sans",
+    fontSize: "16px",
+    fontWeight: "600",
     lineHeight: 1.5,
-    letterSpacing: '0em',
-    textAlign: 'left',
+    letterSpacing: "0em",
+    textAlign: "left",
   },
   Body_Content_S: {
     //styleName: Body/Content/Body - s;
-    fontFamily: 'Open Sans',
-    fontSize: '13px',
+    fontFamily: "Open Sans",
+    fontSize: "13px",
     fontWeight: 400,
     lineHeight: 1.38,
-    letterSpacing: '0em',
-    textAlign: 'left',
+    letterSpacing: "0em",
+    textAlign: "left",
   },
 
   Body_Content_M: {
     //styleName: Body/Content/Body - m;
-    fontFamily: 'Open Sans',
-    fontSize: '14px',
+    fontFamily: "Open Sans",
+    fontSize: "14px",
     fontWeight: 400,
     lineHeight: 1.5,
-    letterSpacing: '0em',
-    textAlign: 'left',
+    letterSpacing: "0em",
+    textAlign: "left",
   },
   Body_Content_BM: {
     //styleName: Body - Content/B-m;
-    fontFamily: 'Open Sans',
-    fontSize: '14px',
+    fontFamily: "Open Sans",
+    fontSize: "14px",
     fontWeight: 400,
     lineHeight: 1.57,
-    letterSpacing: '0em',
-    textAlign: 'center',
+    letterSpacing: "0em",
+    textAlign: "center",
   },
   Body_Labels_M: {
     //styleName: Body/Labels/Label - M2 (Table);
-    fontSize: '12px',
+    fontSize: "12px",
     fontWeight: 700,
     lineHeight: 1.6,
-    letterSpacing: '0em',
-    textAlign: 'left',
+    letterSpacing: "0em",
+    textAlign: "left",
   },
   Body_Labels_M1: {
     //styleName: Body/Labels/Label - M1 (Input);
-    fontSize: '12px',
+    fontSize: "12px",
     fontWeight: 500,
     lineHeight: 1.16,
-    letterSpacing: '0em',
-    textAlign: 'left',
+    letterSpacing: "0em",
+    textAlign: "left",
   },
   SubHeading: {
-    fontFamily: 'Open Sans',
-    fontSize: '12px',
-    fontWeight: '600',
+    fontFamily: "Open Sans",
+    fontSize: "12px",
+    fontWeight: "600",
     lineHeight: 1.5,
-    letterSpacing: '0em',
-    textAlign: 'left',
+    letterSpacing: "0em",
+    textAlign: "left",
   },
   SubHeadingText: {
-    fontFamily: 'Open Sans',
-    fontSize: '12px',
-    fontWeight: '600',
+    fontFamily: "Open Sans",
+    fontSize: "12px",
+    fontWeight: "600",
     lineHeight: 1.5,
-    letterSpacing: '0em',
+    letterSpacing: "0em",
   },
   DialogText: {
-    fontSize: '24px',
+    fontSize: "24px",
     fontWeight: 500,
     lineHeight: 1.333,
-    letterSpacing: '0em',
+    letterSpacing: "0em",
   },
   DialogSubTitle: {
-    fontFamily: 'Open Sans',
-    fontSize: '14px',
+    fontFamily: "Open Sans",
+    fontSize: "14px",
     fontWeight: 400,
     lineHeight: 1.5,
-    letterSpacing: '0em',
+    letterSpacing: "0em",
   },
   RadioText: {
-    fontFamily: 'Open Sans',
-    fontSize: '14px',
+    fontFamily: "Open Sans",
+    fontSize: "14px",
     fontWeight: 600,
     lineHeight: 1.57,
-    letterSpacing: '0.03em',
-    textAlign: 'left',
+    letterSpacing: "0.03em",
+    textAlign: "left",
   },
   HelperText: {
     //styleName: New Styles/Components/Helper text;
-    fontFamily: 'Open Sans',
-    fontSize: '12px',
+    fontFamily: "Open Sans",
+    fontSize: "12px",
     fontWeight: 400,
     lineHeight: 1.6,
-    letterSpacing: '0.4000000059604645px',
-    textAlign: 'left',
+    letterSpacing: "0.4000000059604645px",
+    textAlign: "left",
   },
   LabelOSI: {
     //styleName: Body/Labels/Label - OS1 (Captions);
-    fontFamily: 'Open Sans',
-    fontSize: '12px',
+    fontFamily: "Open Sans",
+    fontSize: "12px",
     fontWeight: 600,
     lineHeight: 1.5,
-    letterSpacing: '0em',
-    textAlign: 'left',
+    letterSpacing: "0em",
+    textAlign: "left",
   },
 } as ExtendedTypographyOptions;
 
 let theme = createTheme({
   palette: {
     primary: {
-      main: '#005596',
+      main: "#005596",
     },
     secondary: {
-      main: '#FFFFFF',
+      main: "#FFFFFF",
     },
     action: {
-      disabled: '#aaa',
+      disabled: "#aaa",
     },
   },
 
@@ -221,33 +226,33 @@ let theme = createTheme({
     MuiCssBaseline: {
       styleOverrides: {
         body: {
-          scrollbarColor: '#edebeb',
-          '&::-webkit-scrollbar, & *::-webkit-scrollbar': {
-            backgroundColor: '#edebeb',
-            width: '0.5em',
-            height: '0.5em',
+          scrollbarColor: "#edebeb",
+          "&::-webkit-scrollbar, & *::-webkit-scrollbar": {
+            backgroundColor: "#edebeb",
+            width: "0.5em",
+            height: "0.5em",
           },
-          '&::-webkit-scrollbar-thumb, & *::-webkit-scrollbar-thumb': {
+          "&::-webkit-scrollbar-thumb, & *::-webkit-scrollbar-thumb": {
             borderRadius: 8,
-            backgroundColor: '#979797',
+            backgroundColor: "#979797",
             minHeight: 1,
             minWidth: 2,
             maxWidth: 1,
           },
-          '&::-webkit-scrollbar-thumb:focus, & *::-webkit-scrollbar-thumb:focus':
+          "&::-webkit-scrollbar-thumb:focus, & *::-webkit-scrollbar-thumb:focus":
             {
-              backgroundColor: '#edebeb',
+              backgroundColor: "#edebeb",
             },
-          '&::-webkit-scrollbar-thumb:active, & *::-webkit-scrollbar-thumb:active':
+          "&::-webkit-scrollbar-thumb:active, & *::-webkit-scrollbar-thumb:active":
             {
-              backgroundColor: '#edebeb',
+              backgroundColor: "#edebeb",
             },
-          '&::-webkit-scrollbar-thumb:hover, & *::-webkit-scrollbar-thumb:hover':
+          "&::-webkit-scrollbar-thumb:hover, & *::-webkit-scrollbar-thumb:hover":
             {
-              backgroundColor: '#979797',
+              backgroundColor: "#979797",
             },
-          '&::-webkit-scrollbar-corner, & *::-webkit-scrollbar-corner': {
-            backgroundColor: '#ffffff',
+          "&::-webkit-scrollbar-corner, & *::-webkit-scrollbar-corner": {
+            backgroundColor: "#ffffff",
           },
         },
       },
@@ -256,8 +261,8 @@ let theme = createTheme({
     MuiDrawer: {
       styleOverrides: {
         paper: {
-          backgroundColor: '#132640',
-          color: 'white',
+          backgroundColor: "#132640",
+          color: "white",
         },
       },
     },
@@ -275,7 +280,7 @@ let theme = createTheme({
     MuiButton: {
       styleOverrides: {
         root: {
-          borderRadius: '30px',
+          borderRadius: "30px",
           // backgroundColor: "#005596",
           // color: "white",
           // border: "0px",

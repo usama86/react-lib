@@ -1,30 +1,9 @@
 import React, { ReactNode } from "react";
 import { TypographyComponent } from "../../src/Typography";
 
-export interface ButtonProps {
-  /**
-   * Is this the principal call to action on the page?
-   */
-  primary?: boolean;
-  /**
-   * What background color to use
-   */
-  backgroundColor?: string;
-  /**
-   * How large should the button be?
-   */
-  size?: "small" | "medium" | "large";
-  /**
-   * Button contents
-   */
-  label?: string;
-  /**
-   * Optional click handler
-   */
-  onClick?: (event: React.MouseEvent<HTMLElement, MouseEvent>) => void;
+export interface TypographyProps {
   children: ReactNode;
   variant?: any;
-  types?: "save" | "cancel" | undefined;
   [key: string]: any; // Allow any other additional props
 }
 
@@ -32,23 +11,31 @@ export interface ButtonProps {
  * Primary UI component for user interaction
  */
 export const Typograhys = ({
-  primary = false,
-  size = "medium",
-  backgroundColor,
-  label,
-  types,
+  children,
+  variant = "HomeBold" ||
+    "XSmallHeading" ||
+    "SmallHeading" ||
+    "CTA_Button_L" ||
+    "CTA_Button_M" ||
+    "CTA_Button_S" ||
+    "SubTitle" ||
+    "Body_Content_S" ||
+    "Body_Content_M" ||
+    "Body_Content_BM" ||
+    "Body_Labels_M" ||
+    "Body_Labels_M1" ||
+    "SubHeading" ||
+    "SubHeadingText" ||
+    "DialogText" ||
+    "DialogSubTitle" ||
+    "RadioText" ||
+    "HelperText" ||
+    "LabelOSI",
   ...props
-}: ButtonProps) => {
+}: TypographyProps) => {
   return (
-    <TypographyComponent
-      type="button"
-      types={types}
-      // className={['storybook-button', `storybook-button--${size}`, mode].join(' ')}
-      backgroundColor={backgroundColor}
-      size={size}
-      {...props}
-    >
-      {label}
+    <TypographyComponent variant={variant} {...props}>
+      {children}
     </TypographyComponent>
   );
 };

@@ -11,6 +11,7 @@ export const ButtonComponent = ({
   types,
   backgroundColor,
   size,
+  sx,
   ...otherProps
 }: ButtonProps) => {
   return (
@@ -19,7 +20,9 @@ export const ButtonComponent = ({
       sx={
         types && types === "save"
           ? { ...btnStyles.saveButton, backgroundColor: backgroundColor }
-          : { ...btnStyles.cancelButton, backgroundColor: backgroundColor }
+          : types === "cancel"
+          ? { ...btnStyles.cancelButton, backgroundColor: backgroundColor }
+          : sx
       }
       {...otherProps}
       size={size}

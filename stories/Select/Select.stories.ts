@@ -19,17 +19,30 @@ type Story = StoryObj<typeof meta>;
 export const Primary: Story = {
   args: {
     primary: true,
-    label: "Save",
-    types: "save",
+    value: "hello",
+    handleValueChange: () => {},
+    options: [
+      { val: "hello", label: "hello" },
+      { val: "hello1", label: "hello1" },
+    ],
+    label: "Test Label",
+    labelVariant: "",
   },
 };
 
-export const Secondary: Story = {
-  args: {
-    label: "Cancel",
-    types: "cancel",
-  },
-};
+// export const Secondary: Story = {
+//   args: {
+//     primary: true,
+//     value: "hello",
+//     handleValueChange: () => {},
+//     options: [
+//       { val: "hello", label: "hello" },
+//       { val: "hello1", label: "hello1" },
+//     ],
+//     label: "Test Label",
+//     labelVariant: "",
+//   },
+// };
 
 // export const Large: Story = {
 //   args: {

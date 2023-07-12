@@ -1,55 +1,38 @@
 import React, { ReactNode } from "react";
 import { SelectComponent } from "../../src/Select";
 
-export interface ButtonProps {
-  /**
-   * Is this the principal call to action on the page?
-   */
-  primary?: boolean;
-  /**
-   * What background color to use
-   */
-  backgroundColor?: string;
-  /**
-   * How large should the button be?
-   */
-  size?: "small" | "medium" | "large";
-  /**
-   * Button contents
-   */
-  label?: string;
-  /**
-   * Optional click handler
-   */
-  onClick?: (event: React.MouseEvent<HTMLElement, MouseEvent>) => void;
-  children: ReactNode;
-  variant?: any;
-  types?: "save" | "cancel" | undefined;
-  [key: string]: any; // Allow any other additional props
+type Option = {
+  val: string;
+  label: string;
+};
+
+export interface SelectProps {
+  value: string;
+  handleValueChange: (value: string) => void;
+  label: string;
+  options: Option[];
+  labelVariant?: any;
+  [key: string]: any;
 }
 
 /**
  * Primary UI component for user interaction
  */
 export const Select = ({
-  primary = false,
-  size = "medium",
-  backgroundColor,
+  value,
+  handleValueChange,
+  options,
   label,
-  types,
+  labelVariant,
   ...props
-}: ButtonProps) => {
+}: SelectProps) => {
   return (
     <SelectComponent
-      label="Select"
-      handleValueChange={(e) => {
-        console.log(e);
-      }}
-      options={[
-        { label: "hi", val: "hi" },
-        { label: "hi", val: "hi" },
-      ]}
-      value="hi"
+      label={label}
+      handleValueChange={handleValueChange}
+      options={options}
+      labelVariant={labelVariant}
+      value={value}
       {...props}
     />
   );

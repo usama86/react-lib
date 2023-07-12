@@ -4,20 +4,7 @@ import InputLabel from "@mui/material/InputLabel";
 import MenuItem from "@mui/material/MenuItem";
 import FormControl from "@mui/material/FormControl";
 import Select, { SelectChangeEvent } from "@mui/material/Select";
-
-type Option = {
-  val: string;
-  label: string;
-};
-
-type IProps = {
-  value: string;
-  handleValueChange: (value: string) => void;
-  label: string;
-  options: Option[];
-  labelVariant?: any;
-  [key: string]: any;
-};
+import { SelectProps } from "../../stories/Select/Select";
 
 export function SelectComponent({
   value,
@@ -26,7 +13,7 @@ export function SelectComponent({
   options,
   labelVariant,
   ...otherProps
-}: IProps) {
+}: SelectProps) {
   const [selectVal, setSelectVal] = React.useState(value);
 
   const handleChange = (event: SelectChangeEvent) => {

@@ -1,30 +1,13 @@
 import React, { ReactNode } from "react";
 import { TextFieldComponent } from "../../src/TextField";
 
-export interface ButtonProps {
-  /**
-   * Is this the principal call to action on the page?
-   */
-  primary?: boolean;
-  /**
-   * What background color to use
-   */
-  backgroundColor?: string;
-  /**
-   * How large should the button be?
-   */
-  size?: "small" | "medium" | "large";
-  /**
-   * Button contents
-   */
-  label?: string;
-  /**
-   * Optional click handler
-   */
-  onClick?: (event: React.MouseEvent<HTMLElement, MouseEvent>) => void;
-  children: ReactNode;
+export interface TextFieldProps {
+  Label?: string;
   variant?: any;
-  types?: "save" | "cancel" | undefined;
+  value?: string;
+  onChange?: (ev: React.ChangeEvent<HTMLInputElement>) => void;
+  types?: string;
+  withChip?: string;
   [key: string]: any; // Allow any other additional props
 }
 
@@ -32,23 +15,29 @@ export interface ButtonProps {
  * Primary UI component for user interaction
  */
 export const TextFields = ({
-  primary = false,
-  size = "medium",
-  backgroundColor,
-  label,
+  id,
+  Label,
+  variant,
+  value,
+  onChange,
+  sx,
   types,
-  ...props
-}: ButtonProps) => {
+  withChip,
+  ...otherProps
+}: TextFieldProps) => {
   return (
     <TextFieldComponent
-      type="button"
+      id={id}
+      value={value}
+      onChange={onChange}
+      label={Label}
+      variant={variant ? variant : "outlined"}
+      sx={sx}
       types={types}
-      // className={['storybook-button', `storybook-button--${size}`, mode].join(' ')}
-      backgroundColor={backgroundColor}
-      size={size}
-      {...props}
+      withChip={withChip}
+      {...otherProps}
     >
-      {label}
+      {Label}
     </TextFieldComponent>
   );
 };

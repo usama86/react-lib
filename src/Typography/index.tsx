@@ -2,18 +2,13 @@ import React, { ReactNode } from "react";
 import Typography from "@mui/material/Typography";
 import { ThemeProvider } from "@mui/material/styles";
 import theme from "./mui.theme";
-
-type IProps = {
-  children: ReactNode;
-  variant?: any;
-  [key: string]: any; // Allow any other additional props
-};
+import { TypographyProps } from "../../stories/Typography/Typography";
 
 export function TypographyComponent({
   children,
   variant,
   ...otherProps
-}: IProps) {
+}: TypographyProps) {
   return (
     <ThemeProvider theme={theme}>
       <Typography variant={variant} {...otherProps}>

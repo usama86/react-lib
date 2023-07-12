@@ -19,15 +19,42 @@ type Story = StoryObj<typeof meta>;
 export const Primary: Story = {
   args: {
     primary: true,
-    label: "Save",
-    types: "save",
+    id: "primary-text",
+    Label: "Test Label",
+    // variant: "filled",
+    value: "Hello",
+    onChange: () => {},
   },
 };
 
-export const Secondary: Story = {
+export const Disabled: Story = {
   args: {
-    label: "Cancel",
-    types: "cancel",
+    primary: true,
+    id: "outlined-read-only-input",
+    Label: "Test Label",
+    // variant: "filled",
+    value: "Hello",
+    onChange: () => {},
+    InputProps: {
+      readOnly: true,
+    },
+    types: "disabled",
+  },
+};
+
+export const ChipTextField: Story = {
+  args: {
+    primary: true,
+    id: "outlined-read-only-input",
+    Label: "Test Label",
+    // variant: "filled",
+    value: "Hello",
+    onChange: () => {},
+    InputProps: {
+      readOnly: true,
+    },
+    types: "disabled",
+    withChip: "I am test",
   },
 };
 

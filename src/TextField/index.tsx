@@ -1,30 +1,45 @@
 import Box from "@mui/material/Box";
 import TextField from "@mui/material/TextField";
-
-type IProps = {
-  Label?: string;
-  variant?: any;
-  value?: string;
-  onChange?: (ev: React.ChangeEvent<HTMLInputElement>) => void;
-  [key: string]: any; // Allow any other additional props
-};
+import { TextFieldProps } from "../../stories/TextField/TextField";
+import { textStyle } from "./style";
+import { StyledTextField } from "./styledTextField";
 
 export function TextFieldComponent({
   Label,
   variant,
   value,
   onChange,
+  sx,
+  types,
+  withChip,
   ...otherProps
-}: IProps) {
+}: TextFieldProps) {
   return (
-    <TextField
-      id="outlined-basic"
-      value={value}
-      onChange={onChange}
-      label={Label}
-      variant={variant ? variant : "outlined"}
-      {...otherProps}
-    />
+    <>
+      {" "}
+      {withChip ? (
+        <StyledTextField
+          id="outlined-basic"
+          value={value}
+          onChange={onChange}
+          label={Label}
+          variant={variant ? variant : "outlined"}
+          sx={sx}
+          alias={withChip}
+          {...otherProps}
+        />
+      ) : (
+        <TextField
+          id="outlined-basic"
+          value={value}
+          onChange={onChange}
+          label={Label}
+          variant={variant ? variant : "outlined"}
+          sx={types && types === "disabled" ? textStyle.DisabledText : sx}
+          {...otherProps}
+        />
+      )}
+    </>
   );
 }
 

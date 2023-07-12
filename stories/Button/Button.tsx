@@ -37,6 +37,7 @@ export const Button = ({
   backgroundColor,
   label,
   types,
+  sx,
   ...props
 }: ButtonProps) => {
   return (
@@ -46,6 +47,7 @@ export const Button = ({
       // className={['storybook-button', `storybook-button--${size}`, mode].join(' ')}
       backgroundColor={backgroundColor}
       size={size}
+      sx={sx}
       {...props}
     >
       {label}
