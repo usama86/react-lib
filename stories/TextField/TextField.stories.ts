@@ -53,8 +53,7 @@ export const ChipTextField: Story = {
     InputProps: {
       readOnly: true,
     },
-    types: "disabled",
-    withChip: "I am test",
+    withChip: "",
   },
 };
 

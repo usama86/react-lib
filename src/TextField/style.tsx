@@ -16,4 +16,14 @@ export const textStyle = {
       border: "none",
     },
   },
+  chipTextStyle: {
+    height: "48px",
+    background: "#fff",
+    maxHeight: "48px",
+    "& .MuiInputBase-root": {
+      height: "48px",
+      maxHeight: "48px",
+      border: "none",
+    },
+  },
 };

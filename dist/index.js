@@ -367,20 +367,22 @@ var ButtonComponent = (_a) => {
     variant,
     types,
     backgroundColor,
-    size
+    size,
+    sx
   } = _b, otherProps = __objRest(_b, [
     "children",
     "onClick",
     "variant",
     "types",
     "backgroundColor",
-    "size"
+    "size",
+    "sx"
   ]);
   return /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(
     import_Button.default,
     __spreadProps(__spreadValues({
       onClick,
-      sx: types && types === "save" ? __spreadProps(__spreadValues({}, btnStyles.saveButton), { backgroundColor }) : __spreadProps(__spreadValues({}, btnStyles.cancelButton), { backgroundColor })
+      sx: types && types === "save" ? __spreadProps(__spreadValues({}, btnStyles.saveButton), { backgroundColor }) : types === "cancel" ? __spreadProps(__spreadValues({}, btnStyles.cancelButton), { backgroundColor }) : sx
     }, otherProps), {
       size,
       children: variant ? /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(TypographyComponent, { variant, component: "p", children }) : children
@@ -451,29 +453,110 @@ SelectComponent.defaultProps = {
 
 // src/TextField/index.tsx
 var import_TextField = __toESM(require("@mui/material/TextField"));
+
+// src/TextField/style.tsx
+var textStyle = {
+  DisabledText: {
+    height: "48px",
+    background: "#F2F6F9",
+    maxHeight: "48px",
+    border: "none",
+    "& .MuiInputBase-root": {
+      height: "48px",
+      background: "#F2F6F9",
+      maxHeight: "48px",
+      border: "none"
+      // borderRadius: "8px",
+    },
+    "& *": {
+      outline: "none",
+      border: "none"
+    }
+  },
+  chipTextStyle: {
+    height: "48px",
+    background: "#fff",
+    maxHeight: "48px",
+    "& .MuiInputBase-root": {
+      height: "48px",
+      maxHeight: "48px",
+      border: "none"
+    }
+  }
+};
+
+// src/TextField/styledTextField.tsx
+var import_styled = __toESM(require("@emotion/styled"));
+var StyledTextField = (0, import_styled.default)(TextFieldComponent)(
+  (_a) => {
+    var _b = _a, { theme: theme2, alias } = _b, params = __objRest(_b, ["theme", "alias"]);
+    const val = alias ? alias : "";
+    return {
+      "& .MuiInputBase-root": {
+        position: "relative",
+        "&::before": {
+          content: `'${val}'`,
+          position: "absolute",
+          padding: "2px 8px 2px 8px",
+          right: 16,
+          borderRadius: "30px",
+          backgroundColor: val ? "#ECEEF0" : "#fff",
+          display: "flex",
+          justifyContent: "center",
+          alignItems: "center",
+          maxWidth: "86px",
+          overflow: "hidden"
+        }
+      }
+    };
+  }
+);
+
+// src/TextField/index.tsx
 var import_jsx_runtime5 = require("react/jsx-runtime");
 function TextFieldComponent(_a) {
   var _b = _a, {
     Label,
     variant,
     value,
-    onChange
+    onChange,
+    sx,
+    types,
+    withChip
   } = _b, otherProps = __objRest(_b, [
     "Label",
     "variant",
     "value",
-    "onChange"
+    "onChange",
+    "sx",
+    "types",
+    "withChip"
   ]);
-  return /* @__PURE__ */ (0, import_jsx_runtime5.jsx)(
-    import_TextField.default,
-    __spreadValues({
-      id: "outlined-basic",
-      value,
-      onChange,
-      label: Label,
-      variant: variant ? variant : "outlined"
-    }, otherProps)
-  );
+  return /* @__PURE__ */ (0, import_jsx_runtime5.jsxs)(import_jsx_runtime5.Fragment, { children: [
+    " ",
+    withChip || withChip === "" ? /* @__PURE__ */ (0, import_jsx_runtime5.jsx)(
+      StyledTextField,
+      __spreadValues({
+        id: "outlined-basic",
+        value,
+        onChange,
+        label: Label,
+        variant: variant ? variant : "outlined",
+        sx: __spreadValues(__spreadValues({}, sx), textStyle.chipTextStyle),
+        alias: withChip
+      }, otherProps)
+    ) : /* @__PURE__ */ (0, import_jsx_runtime5.jsx)(
+      import_TextField.default,
+      __spreadValues({
+        id: "outlined-basic",
+        value,
+        onChange,
+        label: Label,
+        variant: variant ? variant : "outlined",
+        sx: types && types === "disabled" ? textStyle.DisabledText : sx
+      }, otherProps)
+    )
+  ] });
 }
 // Annotate the CommonJS export names for ESM import in node:
 0 && (module.exports = {

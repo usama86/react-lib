@@ -17,14 +17,14 @@ export function TextFieldComponent({
   return (
     <>
       {" "}
-      {withChip ? (
+      {withChip || withChip === "" ? (
         <StyledTextField
           id="outlined-basic"
           value={value}
           onChange={onChange}
           label={Label}
           variant={variant ? variant : "outlined"}
-          sx={sx}
+          sx={{ ...sx, ...textStyle.chipTextStyle }}
           alias={withChip}
           {...otherProps}
         />
